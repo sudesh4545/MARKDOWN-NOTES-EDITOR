@@ -1,0 +1,211 @@
+:root {
+        color-scheme: dark;
+        --bg: #090d18;
+        --panel: #151c30ef;
+        --line: #b9c8ff24;
+        --text: #f8f9ff;
+        --muted: #9ba7bd;
+        --a: #a78bfa;
+        --b: #38bdf8;
+        --c: #f472b6;
+        font-family: Inter, system-ui, sans-serif;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        min-width: 320px;
+        min-height: 100vh;
+        color: var(--text);
+        background:
+          radial-gradient(
+            circle at 10% 0,
+            color-mix(in srgb, var(--a) 30%, transparent),
+            transparent 35%
+          ),
+          radial-gradient(
+            circle at 95% 85%,
+            color-mix(in srgb, var(--b) 23%, transparent),
+            transparent 32%
+          ),
+          var(--bg);
+      }
+      button,
+      input,
+      select,
+      textarea {
+        font: inherit;
+      }
+      .shell {
+        width: min(1120px, calc(100% - 24px));
+        margin: auto;
+        padding: 24px 0;
+      }
+      .top,
+      .row,
+      .head {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 10px;
+      }
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        color: #fff;
+        text-decoration: none;
+      }
+      .logo {
+        width: 43px;
+        height: 43px;
+        display: grid;
+        place-items: center;
+        border-radius: 13px;
+        background: linear-gradient(135deg, var(--a), var(--c));
+        font-weight: 900;
+      }
+      .brand small {
+        display: block;
+        color: var(--muted);
+        font-size: 9px;
+        letter-spacing: 0.2em;
+      }
+      .hero {
+        margin: 48px 0 25px;
+      }
+      .eyebrow {
+        font-size: 10px;
+        color: var(--b);
+        letter-spacing: 0.2em;
+        font-weight: 800;
+      }
+      .hero h1 {
+        font-size: clamp(42px, 7vw, 72px);
+        line-height: 0.92;
+        letter-spacing: -0.06em;
+        margin: 9px 0;
+      }
+      .hero p {
+        color: var(--muted);
+        max-width: 650px;
+      }
+      .panel {
+        border: 1px solid var(--line);
+        border-radius: 21px;
+        padding: 20px;
+        background: linear-gradient(145deg, #18213aef, #0b1120ef);
+        box-shadow: 0 24px 65px #0007;
+      }
+      .grid2 {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 13px;
+      }
+      .field {
+        display: grid;
+        gap: 6px;
+        margin: 10px 0;
+      }
+      .hint {
+        font-size: 10px;
+        color: var(--muted);
+      }
+      input,
+      select,
+      textarea {
+        border: 1px solid var(--line);
+        border-radius: 10px;
+        background: #090f1d;
+        color: #fff;
+        padding: 10px;
+        outline: none;
+      }
+      button {
+        border: 1px solid var(--line);
+        border-radius: 10px;
+        background: #11192c;
+        color: #fff;
+        padding: 9px 13px;
+        cursor: pointer;
+      }
+      .primary {
+        border: 0;
+        background: linear-gradient(110deg, var(--a), var(--c));
+        font-weight: 800;
+      }
+      .status {
+        min-height: 17px;
+        color: var(--b);
+        font-size: 10px;
+      }
+      @media (max-width: 720px) {
+        .grid2 {
+          grid-template-columns: 1fr;
+        }
+        .hero {
+          margin-top: 38px;
+        }
+      }
+      @media (max-width: 430px) {
+        .shell {
+          width: calc(100% - 16px);
+        }
+        .panel {
+          padding: 15px;
+        }
+      }
+      .notes {
+        display: grid;
+        grid-template-columns: 240px 1fr;
+        gap: 13px;
+      }
+      .sidebar input {
+        width: 100%;
+      }
+      .list {
+        display: grid;
+        gap: 6px;
+        margin: 10px 0;
+      }
+      .note {
+        width: 100%;
+        text-align: left;
+      }
+      .note.active {
+        border-color: var(--a);
+      }
+      .editor {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+      }
+      .editor textarea {
+        min-height: 430px;
+        resize: vertical;
+        font:
+          14px/1.6 ui-monospace,
+          monospace;
+      }
+      .preview {
+        min-height: 430px;
+        padding: 16px;
+        border: 1px solid var(--line);
+        border-radius: 11px;
+        background: #090f1d;
+        overflow-wrap: anywhere;
+      }
+      .preview code {
+        color: var(--b);
+      }
+      @media (max-width: 750px) {
+        .notes,
+        .editor {
+          grid-template-columns: 1fr;
+        }
+        .sidebar {
+          max-height: 260px;
+          overflow: auto;
+        }
+      }
